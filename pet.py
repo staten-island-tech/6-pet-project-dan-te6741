@@ -8,9 +8,9 @@ class Pet:
     def __init__(self, name, owner, hapiness, hunger, boredom):
         self.name = name
         self.owner = owner
-        self.__hapiness = hapiness
-        self.__hunger = hunger
-        self.__boredom = boredom
+        self.__hapiness = int(hapiness)
+        self.__hunger = int(hunger)
+        self.__boredom = int(boredom)
     def play(self):
         if energy > 0:
             self.__hapiness =+ 10
@@ -42,7 +42,7 @@ def showstatus():
     print("Boredom:", Iggy._Pet__boredom)
     print(energy)
 
-imrunningoutofideasforvariables = input(print("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day."))
+imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
 while blablabla == 1:
     if imrunningoutofideasforvariables == 1:
         Iggy.play()
@@ -70,17 +70,11 @@ while blablabla == 1:
     if Iggy._Pet__hapiness <= 0 or Iggy._Pet__hunger <= 0 or Iggy._Pet__boredom >= 100:
         if Iggy._Pet__hapiness <= 0:
             print("Iggy got too unhappy and brutally murdered you with his stand for fun")
+            blablabla = 0
         elif Iggy._Pet__hunger <= 0:
             print("Iggy got too hungry and devoured you")
+            blablabla = 0
         elif Iggy._Pet__boredom >= 100:
             print ("Iggy got too bored and forced you to become his jester for eternity")
+            blablabla = 0
         print ("You lasted", day, "days!")
-
-
-
-
-    
-
-
-
-
