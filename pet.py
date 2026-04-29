@@ -42,31 +42,31 @@ def showstatus():
     print("Boredom:", Iggy._Pet__boredom)
     print(energy)
 
-imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
 while blablabla == 1:
+    imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     if imrunningoutofideasforvariables == 1:
         Iggy.play()
         action == 0
-        print(imrunningoutofideasforvariables)
+        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 2:
         Iggy.feed()
         action == 0
-        print(imrunningoutofideasforvariables)
+        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 3:
         Iggy.rest
         action == 0
-        print(imrunningoutofideasforvariables)
+        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 4:
-        showstatus()
+        showstatus
         action == 0
-        print(imrunningoutofideasforvariables)
+        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 5:
         day =day+1
         Iggy._Pet__hapiness -= 20
         Iggy._Pet__hunger -= 20
         energy = 3
-        print ("Day", day, showstatus)
-        print (imrunningoutofideasforvariables)
+        print ("Day:", day, showstatus)
+        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     if Iggy._Pet__hapiness <= 0 or Iggy._Pet__hunger <= 0 or Iggy._Pet__boredom >= 100:
         if Iggy._Pet__hapiness <= 0:
             print("Iggy got too unhappy and brutally murdered you with his stand for fun")
