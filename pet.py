@@ -11,24 +11,24 @@ class Pet:
         self.__hapiness = int(hapiness)
         self.__hunger = int(hunger)
         self.__boredom = int(boredom)
-    def play(self):
+    def play(self, energy):
         if energy > 0:
             self.__hapiness =+ 10
             energy -= 1
             self.__boredom =-1
-            print (self.name,"visciously attacks you with The Fool. He then laughs in your face. +10 hapiness, -1 energy, -1 boredom")
+            print (self.name,"visciously attacks you by ripping your hair out. He then farts in your face. +10 hapiness, -1 energy, -1 boredom")
         else:
             print("You're too tired to play with Iggy right now. Some rest would be nice")
-    def feed(self):
+    def feed(self, energy):
         if energy > 0:
             self.__hunger += 10
             energy -= 1
             print ("you fed",self.name, "some coffee flavored gum. He chewed it up and put it in your hat. +10 hapiness, -1 energy")
         else:
             print("You're too tired to feed Iggy right now. Some rest would be nice.")
-    def rest(self):
+    def rest(self, energy):
         energy+= 1
-        boredom += 20
+        self.__boredom += 20
         print("You take a quick nap. Iggy seems pretty bored but at least you're less tired.")
 
 
@@ -40,33 +40,30 @@ def showstatus():
     print("Hapiness:", Iggy._Pet__hapiness)
     print("Hunger:", Iggy._Pet__hunger)
     print("Boredom:", Iggy._Pet__boredom)
-    print(energy)
+    print("Energy:", energy)
 
 while blablabla == 1:
-    imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
+    imrunningoutofideasforvariables = int(input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day."))
     if imrunningoutofideasforvariables == 1:
-        Iggy.play()
+        print("test")
+        Iggy.play(energy)
         action == 0
-        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 2:
-        Iggy.feed()
+        Iggy.feed(energy)
         action == 0
-        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 3:
-        Iggy.rest
+        Iggy.rest(energy)
         action == 0
-        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 4:
-        showstatus
+        showstatus()
         action == 0
-        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
     elif imrunningoutofideasforvariables == 5:
         day =day+1
         Iggy._Pet__hapiness -= 20
         Iggy._Pet__hunger -= 20
         energy = 3
-        print ("Day:", day, showstatus)
-        imrunningoutofideasforvariables = input("What would you like to do? 1= Play with Iggy. 2= Feed Iggy. 3= Rest. 4= Show Stats. 5= Move on to next day.")
+        print ("Day:", day) 
+        showstatus()
     if Iggy._Pet__hapiness <= 0 or Iggy._Pet__hunger <= 0 or Iggy._Pet__boredom >= 100:
         if Iggy._Pet__hapiness <= 0:
             print("Iggy got too unhappy and brutally murdered you with his stand for fun")
